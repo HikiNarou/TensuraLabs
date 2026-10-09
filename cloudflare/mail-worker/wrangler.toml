@@ -1,0 +1,24 @@
+# TensuraLabs Mail Worker — receives mail from Cloudflare Email Routing and sends outbound mail.
+# Deploy:  npx wrangler deploy
+# Secret:  npx wrangler secret put MAIL_WORKER_SECRET   (same value as the server's MAIL_WORKER_SECRET)
+name = "tensuralabs-mail"
+main = "src/index.js"
+compatibility_date = "2025-01-15"
+workers_dev = true
+
+[vars]
+# Server endpoint that stores inbound mail (must be HTTPS in production).
+INBOUND_URL = "https://mail.tensuralabs.app/api/mail/inbound"
+# Domains allowed as sender for POST /send (comma separated). Keep in sync with MAIL_DOMAINS on the server.
+MAIL_DOMAINS = "tensuralabs.app"
+# Optional: verified Email Routing destination that receives a copy when the server is unreachable.
+FALLBACK_FORWARD = ""
+MAX_MESSAGE_BYTES = "26214400"
+
+# Outbound delivery. Without `destination_address`/`allowed_destination_addresses` Cloudflare only
+# delivers to addresses verified in Email Routing → Destination addresses.
+[[send_email]]
+name = "SEB"
+
+[observability]
+enabled = true

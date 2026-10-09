@@ -1,0 +1,15 @@
+{
+  "name": "tensuralabs-mail-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Email Worker for TensuraLabs Mail (inbound routing + outbound send_email).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.100.0"
+  }
+}

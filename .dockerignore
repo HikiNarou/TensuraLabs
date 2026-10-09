@@ -1,0 +1,17 @@
+.git
+.gitignore
+node_modules
+npm-debug.log*
+.env
+.env.*
+!.env.example
+data
+*.db
+*.db-shm
+*.db-wal
+tests
+cloudflare
+.wrangler
+coverage
+*.log
+.DS_Store

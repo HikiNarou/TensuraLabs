@@ -1,0 +1,27 @@
+{
+  "name": "tensuralabs",
+  "version": "5.0.0",
+  "description": "TensuraLabs company website — full-stack (Express + SQLite + vanilla SPA)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning --watch server/index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test tests/*.test.js",
+    "create-admin": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/create-admin.js"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "compression": "^1.8.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "postal-mime": "^4.0.5",
+    "qrcode": "^1.5.4",
+    "zod": "^4.6.5"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  }
+}
