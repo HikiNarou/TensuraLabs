@@ -1,0 +1,50 @@
+/* Inline SVG icons for TensuraLabs Mail (stroke icons, 24×24). Trusted markup wrapped with raw(). */
+import { raw } from '../core/dom.js';
+
+const s = (body) => `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
+
+const MARKUP = {
+  logo: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.4 3.2c4 .1 7.6 3 7.8 7.3.3 4.7-2.6 9.3-7.6 10.1-4.6.7-8.6-2.4-8.9-6.9C3.4 9 7.6 3.1 12.4 3.2Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.2 9.6 7.6 12.3l2.6 2.7M13.8 9.6l2.6 2.7-2.6 2.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  inbox: s('<path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5.5 5h13L21 13v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/>'),
+  send: s('<path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5z"/>'),
+  star: s('<path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/>'),
+  starFill: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z"/></svg>',
+  mail: s('<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/>'),
+  mailOpen: s('<path d="M3 10.5 12 4l9 6.5V19a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19z"/><path d="m3.5 10.8 8.5 5.7 8.5-5.7"/>'),
+  plus: s('<path d="M12 5v14M5 12h14"/>'),
+  pen: s('<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>'),
+  trash: s('<path d="M4 7h16M10 11v6M14 11v6"/><path d="M6 7l1 12.5A1.5 1.5 0 0 0 8.5 21h7a1.5 1.5 0 0 0 1.5-1.5L18 7"/><path d="M9 7V4.5h6V7"/>'),
+  refresh: s('<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/>'),
+  copy: s('<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/>'),
+  check: s('<path d="m5 12.5 4.5 4.5L19 7.5"/>'),
+  checkAll: s('<path d="m2.5 12.5 4.5 4.5 9-9.5"/><path d="m12.5 16.5.5.5 9-9.5"/>'),
+  close: s('<path d="M6 6l12 12M18 6 6 18"/>'),
+  menu: s('<path d="M4 7h16M4 12h16M4 17h16"/>'),
+  search: s('<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/>'),
+  back: s('<path d="M15 5 8 12l7 7"/>'),
+  chevron: s('<path d="m6 9 6 6 6-6"/>'),
+  left: s('<path d="M15 6l-6 6 6 6"/>'),
+  right: s('<path d="m9 6 6 6-6 6"/>'),
+  reply: s('<path d="M10 8 4 13l6 5"/><path d="M4 13h10a6 6 0 0 1 6 6v1"/>'),
+  forward: s('<path d="m14 8 6 5-6 5"/><path d="M20 13H10a6 6 0 0 0-6 6v1"/>'),
+  clip: s('<path d="m20 11.5-8.2 8.2a5 5 0 0 1-7.1-7.1l8.8-8.8a3.4 3.4 0 0 1 4.8 4.8l-8.6 8.6a1.7 1.7 0 0 1-2.4-2.4l7.9-7.9"/>'),
+  download: s('<path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/>'),
+  key: s('<circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16 7l2.5 2.5M14 9l2 2"/>'),
+  logout: s('<path d="M15 4h3.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H15"/><path d="M10 8 6 12l4 4M6 12h10"/>'),
+  eye: s('<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>'),
+  image: s('<rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="m4 18 5-5 3.5 3.5L15 14l5 4.5"/>'),
+  clock: s('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>'),
+  shield: s('<path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/>'),
+  bolt: s('<path d="M13.5 2.5 4.5 14h6.5l-1 7.5 9-11.5h-6.5z"/>'),
+  globe: s('<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.2 3.6 8.5s-1.2 6.1-3.6 8.5c-2.4-2.4-3.6-5.2-3.6-8.5S9.6 5.9 12 3.5Z"/>'),
+  shuffle: s('<path d="M3 7h3.5c4.5 0 6.5 10 11 10H21"/><path d="M3 17h3.5c1.6 0 2.8-1.3 3.8-3M14 9.6C15 8.2 16.1 7 17.5 7H21"/><path d="m18.5 4.5 2.5 2.5-2.5 2.5M18.5 14.5 21 17l-2.5 2.5"/>'),
+  more: s('<circle cx="5.5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18.5" cy="12" r="1.2"/>'),
+  alert: s('<path d="M12 4 2.8 19.5h18.4z"/><path d="M12 10v4.5M12 17.2v.1"/>'),
+  info: s('<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.8v.1"/>'),
+  code: s('<path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5"/>'),
+  external: s('<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>'),
+  user: s('<circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c.9-3.7 3.9-6 7.5-6s6.6 2.3 7.5 6"/>'),
+  file: s('<path d="M14 3.5H7A1.5 1.5 0 0 0 5.5 5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3.5V8h4.5"/>'),
+};
+
+export const icons = Object.fromEntries(Object.entries(MARKUP).map(([name, markup]) => [name, raw(markup)]));
